@@ -1,0 +1,43 @@
+{
+  "name": "trans-no-late",
+  "version": "1.0.0",
+  "description": "tran-no-late",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "lint": "eslint --fix --ext .js .",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile db/knexfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sjain020188/trans-no-late.git"
+  },
+  "author": "Shruti Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sjain020188/trans-no-late/issues"
+  },
+  "homepage": "https://github.com/Sjain020188/trans-no-late#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "knex": "^0.16.5",
+    "pg": "^7.10.0",
+    "save": "^2.3.3",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-problems": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "faker": "^4.1.0",
+    "node-fetch": "^2.4.0",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  }
+}

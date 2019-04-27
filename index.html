@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Trans-no-late</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="/logo.jpg"></a>
+        </div>
+        <div class="navbar-header">
+          <a class="navbar-signup" href="#">Sign up</a>
+        </div>
+       
+      </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
+         
+        </div>
+        <div class="col-sm-8 text-left">
+          <h1>Trans-no-late</h1>
+          <p>
+            <form class="search-form" id="search-form">
+                <input class="search" id="searchInput" placeholder="choose your language">
+                    <button type="button" class="btn btn-secondary btn-purple">Submit</button>
+              </form>
+          </p>
+          <hr />
+          <h3 >Users</h3>
+          <div class="resulted_users"></div>
+        </div>
+        <div class="col-sm-2 sidenav">  
+         
+        </div>
+      </div>
+    </div>
+
+    <!--SignUp form-->
+    <div id="myModal" class="register_form">
+      <div class="register-content">
+         <span class="close">&times;</span>
+    <form class="form-horizontal" action='/users' method="POST" id="registerForm">
+      <fieldset>
+    <div id="legend">
+      <legend class="">Register</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="name">Name</label>
+      
+        <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+      
+      
+    </div>
+
+    <div class="control-group">
+      <!-- Country -->
+      <label class="control-label"  for="country">Country</label>
+      
+        <input type="text" id="country" name="country" placeholder="" class="input-xlarge">
+ 
+      
+    </div>
+
+    <div class="control-group">
+      <!-- Phone number -->
+      <label class="control-label"  for="phone_number">phone_number</label>
+      
+        <input type="text" id="phone_number" name="phone_number" placeholder="" class="input-xlarge">
+      
+      
+    </div>
+
+    <div class="control-group">
+      <!-- Mobile number -->
+      <label class="control-label"  for="Mobile Number">Mobile Number</label>
+      
+        <input type="text" id="mob_number" name="mob_number" placeholder="" class="input-xlarge">
+   
+    
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="email">E-mail</label>
+      
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+     
+    
+    </div>
+ 
+    <div class="control-group">
+      <!-- Skype ID -->
+      <label class="control-label"  for="SkypeID">SkypeID</label>
+      
+        <input type="text" id="skype_id" name="skype_id" placeholder="" class="input-xlarge">
+     
+    
+    </div>
+
+    <div class="control-group">
+      <!-- Line ID -->
+      <label class="control-label"  for="Line ID">Line ID</label>
+      
+        <input type="text" id="line_id" name="line_id" placeholder="" class="input-xlarge">
+  
+    
+    </div>
+    
+    <div class="control-group">
+      <!-- WhatsApp-->
+      <label class="control-label"  for="WhatssApp">WhatssApp</label>
+      
+        <input type="text" id="whatsapp_number" name="whatsapp_number" placeholder="" class="input-xlarge">
+       
+    
+    </div>
+
+    <div class="control-group">
+      <!-- Viber -->
+      <label class="control-label"  for="Viber">Viber</label>
+      
+        <input type="text" id="viber_number" name="viber_number" placeholder="" class="input-xlarge">
+    
+  
+    </div>
+
+    <div class="control-group">
+      <!-- Native Language-->
+      <label class="control-label"  for="Native_Language">Native_Language</label>
+      
+        <input type="text" id="native_language" name="native_language" placeholder="" class="input-xlarge">
+  
+  
+    </div>
+
+    <div class="control-group">
+      <!-- Second Language -->
+      <label class="control-label"  for="Second_Language">Second_Language</label>
+      
+        <input type="text" id="lang_2" name="lang_2" placeholder="" class="input-xlarge">
+     
+  
+    </div>
+
+    <div class="control-group">
+      <!-- Third Language -->
+      <label class="control-label"  for="Third language">Third language</label>
+      
+        <input type="text" id="lang_3" name="lang_3" placeholder="" class="input-xlarge">
+   
+  
+    </div>
+
+    <div class="control-group">
+      <!-- Availaibility -->
+      <label class="control-label"  for="Availaibility">Availaibility</label>
+      
+   
+      
+        <input type="text" id="availaibility" name="availaibility" placeholder="" class="input-xlarge">
+    
+
+      <div class="control-group">
+        <!-- Availaibility -->
+        <label class="control-label"  for="credits">credits</label>
+        
+     
+        
+          <input type="text" id="credits" name="credits" placeholder="" class="input-xlarge">
+      
+    </div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-secondary btn-purple" type="submit">Register</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div></div>
+
+    <!-- <footer class="container-fluid text-center">
+      <p>Made by Shruti Jain</p> -->
+        <!-- <p><a href="#" class="fa fa-github"></a><p>
+        <p><a href="#" class="fa fa-facebook"></a><p>
+        <p><a href="#" class="fa fa-linkedin"></a></p> -->
+      <!-- </ul>
+    </footer> -->
+    <script src="/renderDOM.js"></script>
+    <script src="" async defer></script>
+  </body>
+</html>

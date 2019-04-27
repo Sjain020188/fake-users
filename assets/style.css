@@ -1,0 +1,158 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #ff99ff;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 450px;
+}
+
+#legend {
+  background-color: #ff99ff;
+  padding: 5px;
+  color: #007bff;
+}
+label {
+  width: 150px;
+}
+.register_form {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Modal Content/Box */
+.register-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-left {
+  margin-top: 25px;
+}
+.search-form {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+input.search {
+  height: 40px;
+  border-radius: 5px;
+}
+select.search {
+  margin: 0;
+  text-align: center;
+  outline: 0;
+  border: 10px solid #f7f7f7;
+  width: 100%;
+  position: relative;
+  top: 10px;
+  z-index: 2;
+  border-radius: 5px;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.resulted_users div {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  display: flex;
+}
+.resulted_users span {
+  margin: 10px;
+  width: 200px;
+}
+
+.btn-secondary {
+  background-color: #8e24aa !important;
+  color: white;
+}
+
+.userDataHeader {
+  background-color: #8e24aa;
+  color: white;
+  border-radius: 5px;
+}
+
+.suggestions {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.suggestions li {
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+.social-icons {
+  font-size: 30px;
+  display: inline;
+}
+
+.social-icons li {
+  display: inline;
+}
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #ff99ff;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {
+    height: auto;
+  }
+}
