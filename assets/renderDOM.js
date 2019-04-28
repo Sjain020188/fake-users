@@ -61,3 +61,13 @@ document
   .addEventListener("click", (e) => {
     deleteModal.style.display = "none";
   });
+
+document
+  .querySelector(".delete_form .delete-btn")
+  .addEventListener("click", (e) => {
+    const deleteUser = document.querySelector(".delete_form #email").value;
+    const targetURL = `api/users?email=${deleteUser}`;
+    fetch(targetURL, {
+      method: "DELETE",
+    });
+  });

@@ -10,7 +10,11 @@
   height: 450px;
 }
 
-#legend {
+.navbar-signup {
+  padding-right: 40px;
+}
+
+.modalHeader {
   background-color: #ff99ff;
   padding: 5px;
   color: #007bff;

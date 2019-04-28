@@ -31,11 +31,10 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#"><img src="/logo.jpg"></a>
         </div>
+       
         <div class="navbar-header">
-          <a class="navbar-signup" href="#">Sign up</a>
-        </div>
-        <div class="navbar-header">
-          <a class="navbar-delete" href="#">Delete your account</a>
+            <a class="navbar-signup" href="#">Sign up</a>
+            <a class="navbar-delete" href="#">Delete your account</a>
         </div>
        
       </div>
@@ -43,7 +42,7 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
-        <div class="col-sm-2 sidenav">
+        <div class="col-sm-2">
          
         </div>
         <div class="col-sm-8 text-left">
@@ -55,10 +54,10 @@
               </form>
           </p>
           <hr />
-          <h3 >Users</h3>
+          <!-- <h3 >Users</h3> -->
           <div class="resulted_users"></div>
         </div>
-        <div class="col-sm-2 sidenav">  
+        <div class="col-sm-2">  
          
         </div>
       </div>
@@ -67,12 +66,14 @@
     <!--SignUp form-->
     <div id="registerModal" class="register_form">
       <div class="register-content">
+        <div class ="modalHeader">
          <span class="close">&times;</span>
     <form class="form-horizontal" action='/api/users' method="POST" id="registerForm">
       <fieldset>
     <div id="legend">
       <legend class="">Register</legend>
     </div>
+  </div>
     <div class="control-group">
       <!-- Username -->
       <label class="control-label"  for="name">Name</label>
@@ -167,11 +168,12 @@
 </form>
 </div>
 </div>
+</div>
 
 <div id="deleteModal" class="delete_form">
   <div class="delete-content">
      <span class="close">&times;</span>
-<form class="form-horizontal" action='/api/users' method="DELETE" id="deleteForm">
+<form class="form-horizontal" id="deleteForm">
   <fieldset>
 <div id="legend">
   <legend class="">Delete your account</legend>
@@ -185,7 +187,7 @@
 <div class="control-group">
   <!-- Button -->
   <div class="controls">
-    <button class="btn btn-secondary btn-purple" type="submit">Delete</button>
+    <button class="btn btn-secondary btn-purple delete-btn" type="submit">Delete</button>
   </div>
 </div>
 

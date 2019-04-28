@@ -35,19 +35,19 @@ describe("Fake User Database", () => {
         credits: 4,
         created_at: "2019-04-27T23:53:40.073Z",
       };
-      const res = await request.get("/users?name=Shruti");
+      const res = await request.get("/api/users?name=Brice");
       JSON.parse(res.text)[0].should.deep.equal(expected);
     });
   });
 
   describe("GET /api/users", () => {
     it("should return all users", async () => {
-      const res = await request.get("/users");
+      const res = await request.get("/api/users");
       res.status.should.equal(200);
     });
   });
 
-  describe("GET /api/POST", () => {
+  describe("POST /api/users", () => {
     it("should add data to users table ", async () => {
       const expected = {
         name: "NewUser2",
@@ -66,10 +66,31 @@ describe("Fake User Database", () => {
         credits: 4,
         created_at: "2019-04-27T23:53:40.073Z",
       };
-      const res = await request.post("/users").send(expected);
-
-      const resNew = await request.get("/users?name=NewUser2");
+      const res = await request.post("/api/users").send(expected);
+      res.status.should.equal(200);
+      const resNew = await request.get("/api/users?name=NewUser2");
       JSON.parse(resNew.text)[0].name.should.equal("NewUser2");
+    });
+  });
+
+  describe("PATCH /api/users", () => {
+    it("should change particular user from database ", async () => {
+      const res = await request
+        .patch("/api/users?name=Harrison")
+        .send({ country: "Japan", phone_number: "XXX" });
+      const resNew = await request.get("/api/users?name=Harrison");
+      res.status.should.equal(200);
+      JSON.parse(resNew.text)[0].country.should.equal("Japan");
+      JSON.parse(resNew.text)[0].phone_number.should.equal("XXX");
+    });
+  });
+
+  describe("DELETE /api/users", () => {
+    it("should delete particular user from database ", async () => {
+      const res = await request.delete("/api/users").send({ name: "Brice" });
+      res.status.should.equal(200);
+      const resNew = await request.get("/api/users?name=Brice");
+      JSON.parse(resNew.text).length.should.equal(0);
     });
   });
 });

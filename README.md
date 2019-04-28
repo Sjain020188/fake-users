@@ -21,7 +21,7 @@ This is an awesome API which you can use to generate random data for 1000's of u
 
 ## This API has following endpoints
 
-1. http://localhost:3000/users (GET)
+1. /api/users (GET)
    List random data of thousands of users. It gives following details
 
 - ID
@@ -45,13 +45,19 @@ You can use query parameters in this endpoint to get spefic user
 Eg: http://localhost:3000/users?lang3=French&name=Dante
 Will give you users with name Dante and language 3 as French
 
-2.  http://localhost:3000/users/:lang (POST)
+2.  /api/users/:lang (POST)
     Additional endpoint to get user with particular native language
 
-3.  http://localhost:3000/users (POST)
+3.  /api/users (POST)
     You can use this endpoint to add data to users table
 
-4.  http://localhost:3000/languages (GET)
+4.  /api/users (DELETE)
+    You can use this endpoint to delete data from users table by specifying any property of user in query parameter
+
+5.  /api/users (PATCH)
+    You can use this endpoint to update data from users table. Specify which user to update in query parameter and data to update in body
+
+6.  /api/languages (GET)
     It gives you data of all languages of world
 
 ## APP consuming this API
@@ -61,3 +67,4 @@ This is a small application consuming this API
 
 1.  Enter native language in search box and it will give you all users of that native language
 2.  Click on Signup. Fill the form. Data will be added to users table.
+3.  Click on Delete your account. Enter email address of user to delete and that user will be deleted from the DB.
