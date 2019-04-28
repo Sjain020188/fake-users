@@ -1,9 +1,9 @@
-module.exports = (knex, query) => {
+module.exports = (knex, query, body) => {
   return () => {
     return Promise.resolve(
       knex("users")
         .where(query)
-        .del()
+        .update(body)
         .then((users) => {
           return users;
         })
