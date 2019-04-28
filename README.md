@@ -1,9 +1,13 @@
+## Fake user API
+
+![logo](https://github.com/Sjain020188/trans-no-late/blob/master/assets/logo.jpg)
+
 This was created during my time as a student at Code Chrysalis
 Fake Users API
 
 This is an awesome API which you can use to generate random data for 1000's of users.
 
-In order to use this repository
+## Steps to get started
 
 - Fork the repository
 - Clone it on your local machine
@@ -15,7 +19,7 @@ In order to use this repository
 - Seed data in your DB knex seed:run
 - go to localhost://3000 on your local machine
 
-This API has following endpoints
+## This API has following endpoints
 
 1. http://localhost:3000/users (GET)
    List random data of thousands of users. It gives following details
@@ -50,7 +54,7 @@ Will give you users with name Dante and language 3 as French
 4.  http://localhost:3000/languages (GET)
     It gives you data of all languages of world
 
-APP consuming this API
+## APP consuming this API
 
 Go to http://localhost:3000/
 This is a small application consuming this API
