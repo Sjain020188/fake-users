@@ -9,7 +9,7 @@ const config = require("../config");
 const knex = require("knex")(config.db);
 const listUsers = require("../db/users/list");
 const listUsersByLanguage = require("../db/users/listByLanguage");
-const listUsersByUsername = require("../db/users/listByUsername");
+const deleteByQueryParam = require("../db/users/deleteByQueryParam");
 const listByQueryParam = require("../db/users/listByQueryParam");
 const createUser = require("../db/users/createUser");
 const listLanguages = require("../db/languages/list");
@@ -21,33 +21,41 @@ const setUpServer = () => {
   app.get("/", function(req, res) {
     res.sendFile("/Users/shru/Desktop/trans-no-late/index.html");
   });
-  app.get("/users", (req, res) => {
+  app.get("/api/users", (req, res) => {
     if (req.query) {
       listByQueryParam(knex, req.query)()
         .then((allUsers) => res.status(200).send(allUsers))
-        .catch((err) => res.status(400).send(err.message));
+        .catch((err) => res.sendStatus(400));
     } else {
       listUsers(knex)()
         .then((allUsers) => res.status(200).send(allUsers))
-        .catch((err) => res.status(400).send(err.message));
+        .catch((err) => res.sendStatus(400));
     }
   });
 
-  app.post("/users", urlEncodedParser, (req, res) => {
+  app.post("/api/users", urlEncodedParser, (req, res) => {
     createUser(knex, req.body)()
-      .then((allUsers) => res.status(200).send(allUsers))
-      .catch((err) => res.status(400).send(err.message));
+      .then(() => res.status(200).send("Inserted"))
+      .catch((err) => res.sendStatus(400));
   });
 
-  app.get("/languages", (req, res) => {
-    listLanguages(knex)()
-      .then((allLanguages) => res.status(200).send(allLanguages))
-      .catch((err) => res.status(400).send(err.message));
-  });
-  app.get("/users/:lang", (req, res) => {
+  app.get("/api/users/:lang", (req, res) => {
     listUsersByLanguage(knex, req.params.lang)()
       .then((allUsers) => res.status(200).send(allUsers))
-      .catch((err) => res.status(400).send(err.message));
+      .catch((err) => res.sendStatus(400));
+  });
+
+  app.delete("/api/users", (req, res) => {
+    console.log(req.query);
+    deleteByQueryParam(knex, req.query)()
+      .then((allUsers) => res.status(200).send("Deleted"))
+      .catch((err) => res.sendStatus(400));
+  });
+
+  app.get("/api/languages", (req, res) => {
+    listLanguages(knex)()
+      .then((allLanguages) => res.status(200).send(allLanguages))
+      .catch((err) => res.sendStatus(400));
   });
 
   return app;

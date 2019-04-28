@@ -34,6 +34,9 @@
         <div class="navbar-header">
           <a class="navbar-signup" href="#">Sign up</a>
         </div>
+        <div class="navbar-header">
+          <a class="navbar-delete" href="#">Delete your account</a>
+        </div>
        
       </div>
     </nav>
@@ -44,7 +47,7 @@
          
         </div>
         <div class="col-sm-8 text-left">
-          <h1>Trans-no-late</h1>
+          <h1>Fake Users</h1>
           <p>
             <form class="search-form" id="search-form">
                 <input class="search" id="searchInput" placeholder="choose your language">
@@ -62,10 +65,10 @@
     </div>
 
     <!--SignUp form-->
-    <div id="myModal" class="register_form">
+    <div id="registerModal" class="register_form">
       <div class="register-content">
          <span class="close">&times;</span>
-    <form class="form-horizontal" action='/users' method="POST" id="registerForm">
+    <form class="form-horizontal" action='/api/users' method="POST" id="registerForm">
       <fieldset>
     <div id="legend">
       <legend class="">Register</legend>
@@ -73,88 +76,60 @@
     <div class="control-group">
       <!-- Username -->
       <label class="control-label"  for="name">Name</label>
-      
         <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
-      
-      
     </div>
 
     <div class="control-group">
       <!-- Country -->
       <label class="control-label"  for="country">Country</label>
-      
-        <input type="text" id="country" name="country" placeholder="" class="input-xlarge">
- 
-      
+        <input type="text" id="country" name="country" placeholder="" class="input-xlarge">  
     </div>
 
     <div class="control-group">
       <!-- Phone number -->
-      <label class="control-label"  for="phone_number">phone_number</label>
-      
-        <input type="text" id="phone_number" name="phone_number" placeholder="" class="input-xlarge">
-      
-      
+      <label class="control-label"  for="phone_number">phone_number</label>   
+        <input type="text" id="phone_number" name="phone_number" placeholder="" class="input-xlarge">  
     </div>
 
     <div class="control-group">
       <!-- Mobile number -->
-      <label class="control-label"  for="Mobile Number">Mobile Number</label>
-      
-        <input type="text" id="mob_number" name="mob_number" placeholder="" class="input-xlarge">
-   
-    
+      <label class="control-label"  for="Mobile Number">Mobile Number</label>  
+        <input type="text" id="mob_number" name="mob_number" placeholder="" class="input-xlarge">  
     </div>
  
     <div class="control-group">
       <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
-      
+      <label class="control-label" for="email">E-mail</label>  
         <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-     
-    
     </div>
  
     <div class="control-group">
       <!-- Skype ID -->
       <label class="control-label"  for="SkypeID">SkypeID</label>
-      
         <input type="text" id="skype_id" name="skype_id" placeholder="" class="input-xlarge">
-     
-    
     </div>
 
     <div class="control-group">
       <!-- Line ID -->
       <label class="control-label"  for="Line ID">Line ID</label>
-      
         <input type="text" id="line_id" name="line_id" placeholder="" class="input-xlarge">
-  
-    
     </div>
     
     <div class="control-group">
       <!-- WhatsApp-->
-      <label class="control-label"  for="WhatssApp">WhatssApp</label>
-      
+      <label class="control-label"  for="WhatssApp">WhatssApp</label>    
         <input type="text" id="whatsapp_number" name="whatsapp_number" placeholder="" class="input-xlarge">
-       
-    
     </div>
 
     <div class="control-group">
       <!-- Viber -->
       <label class="control-label"  for="Viber">Viber</label>
-      
-        <input type="text" id="viber_number" name="viber_number" placeholder="" class="input-xlarge">
-    
-  
+       <input type="text" id="viber_number" name="viber_number" placeholder="" class="input-xlarge">
     </div>
 
     <div class="control-group">
       <!-- Native Language-->
-      <label class="control-label"  for="Native_Language">Native_Language</label>
-      
+      <label class="control-label"  for="Native_Language">Native_Language</label>  
         <input type="text" id="native_language" name="native_language" placeholder="" class="input-xlarge">
   
   
@@ -163,39 +138,24 @@
     <div class="control-group">
       <!-- Second Language -->
       <label class="control-label"  for="Second_Language">Second_Language</label>
-      
         <input type="text" id="lang_2" name="lang_2" placeholder="" class="input-xlarge">
-     
-  
     </div>
 
     <div class="control-group">
       <!-- Third Language -->
       <label class="control-label"  for="Third language">Third language</label>
-      
         <input type="text" id="lang_3" name="lang_3" placeholder="" class="input-xlarge">
-   
-  
     </div>
 
     <div class="control-group">
       <!-- Availaibility -->
       <label class="control-label"  for="Availaibility">Availaibility</label>
-      
-   
-      
         <input type="text" id="availaibility" name="availaibility" placeholder="" class="input-xlarge">
-    
-
       <div class="control-group">
         <!-- Availaibility -->
         <label class="control-label"  for="credits">credits</label>
-        
-     
-        
           <input type="text" id="credits" name="credits" placeholder="" class="input-xlarge">
-      
-    </div>
+      </div>
  
     <div class="control-group">
       <!-- Button -->
@@ -205,7 +165,35 @@
     </div>
   </fieldset>
 </form>
-</div></div>
+</div>
+</div>
+
+<div id="deleteModal" class="delete_form">
+  <div class="delete-content">
+     <span class="close">&times;</span>
+<form class="form-horizontal" action='/api/users' method="DELETE" id="deleteForm">
+  <fieldset>
+<div id="legend">
+  <legend class="">Delete your account</legend>
+</div>
+<div class="control-group">
+  <!-- Username -->
+  <label class="control-label"  for="email">Email Address</label>
+    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+</div>
+
+<div class="control-group">
+  <!-- Button -->
+  <div class="controls">
+    <button class="btn btn-secondary btn-purple" type="submit">Delete</button>
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+</div>
+</div>
 
     <!-- <footer class="container-fluid text-center">
       <p>Made by Shruti Jain</p> -->

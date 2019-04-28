@@ -14,11 +14,13 @@
   background-color: #ff99ff;
   padding: 5px;
   color: #007bff;
+  margin-bottom: 20px;
 }
 label {
   width: 150px;
 }
-.register_form {
+.register_form,
+.delete_form {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -34,7 +36,8 @@ label {
 }
 
 /* Modal Content/Box */
-.register-content {
+.register-content,
+.delete-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
